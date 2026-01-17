@@ -19,16 +19,17 @@ body{
   color:var(--text);
 }
 
-.hero{
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  background:linear-gradient(120deg,#ff6a6a,#b00020);
-  position:relative;
-  overflow:hidden;
+.hero {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
 }
+
 
 .hero::after{
   content:"";
