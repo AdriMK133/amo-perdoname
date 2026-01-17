@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Amô, me perdoa?</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #0a0a0a;
+  --card: #ffffff;
+  --text: #2a2a2a;
+  --accent: #b00020;
+  --muted: #777;
+}
+
+body.light {
+  --bg: #f4f4f4;
+  --card: #ffffff;
+  --text: #1e1e1e;
+  --accent: #8b0015;
+  --muted: #666;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.6s ease, color 0.6s ease;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* TOGGLE */
+.toggle {
+  position: fixed; top:25px; right:25px; z-index:1000;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  border-radius:30px;
+  padding:10px 16px;
+  color:#fff; cursor:pointer; font-size:0.9rem;
+}
+
+/* HERO / PARALLAX + PARTICULAS + GRADIENTE */
+.hero {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  background: linear-gradient(120deg, #ff6a6a, #b00020, #ff6a6a);
+  background-size: 600% 600%;
+  animation: gradientFlow 20s ease infinite;
+}
+@keyframes gradientFlow {
+  0% { background-position:0% 50%; }
+  50% { background-position:100% 50%; }
+  100% { background-position:0% 50%; }
+}
+.hero::after {
+  content:"";
+  position:absolute; top:0; left:0; width:100%; height:100%;
+  background: url('hero.jpeg') center/cover no-repeat;
+  z-index:1;
+  opacity:0.35;
+}
+.hero-content { max-width:900px; padding:20px; position: relative; z-index:2; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size:4rem; margin-bottom:20px; }
+.hero p { font-size:1.35rem; line-height:1.9; opacity:0.95; }
+
+/* PARTICLES */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  pointer-events: none;
+  animation: float 10s infinite linear;
+  z-index:2;
+}
+@keyframes float {
+  0% { transform: translateY(0) translateX(0); opacity: 0.3; }
+  50% { transform: translateY(-60px) translateX(30px); opacity: 0.6; }
+  100% { transform: translateY(0) translateX(0); opacity: 0.3; }
+}
+
+/* SECTIONS */
+section {
+  background: var(--card);
+  margin:120px auto;
+  padding:80px 30px;
+  max-width:1100px;
+  border-radius:30px;
+  box-shadow:0 40px 90px rgba(0,0,0,0.15);
+  opacity:0;
+  transform:translateY(60px);
+  transition:1s ease;
+}
+section.show { opacity:1; transform:translateY(0); }
+section h2 { font-family:'Playfair Display', serif; text-align:center; font-size:2.7rem; color:var(--accent); margin-bottom:25px; }
+.divider { width:120px; height:4px; background:var(--accent); margin:20px auto 40px; border-radius:2px; }
+section p { font-size:1.15rem; line-height:2; margin-bottom:22px; color:var(--text); }
+.emphasis { color:var(--accent); font-weight:600; }
+
+/* GALLERY PREMIUM ANIMADA */
+.gallery {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap:30px;
+  perspective: 1200px;
+}
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  opacity:0;
+  transform: translateY(60px) rotateY(0deg);
+  transition: transform 0.8s ease, box-shadow 0.6s ease, opacity 0.8s ease;
+}
+.gallery-item img {
+  width:100%;
+  height:380px;
+  object-fit:cover;
+  display:block;
+  transition: transform 0.8s ease;
+}
+.gallery-item.show {
+  opacity:1;
+  transform: translateY(0) rotateY(0deg);
+}
+.gallery-item:hover {
+  transform: rotateY(8deg) rotateX(4deg) scale(1.05);
+  box-shadow: 0 35px 80px rgba(0,0,0,0.35);
+}
+.gallery-item:hover img { transform: scale(1.1); }
+.caption { text-align:center; font-style:italic; color:var(--muted); margin-top:25px; }
+
+/* BUTTON CTA */
+.cta { text-align:center; margin:140px 20px; }
+.cta-button {
+  display:inline-block;
+  background:linear-gradient(135deg,#b00020,#500010);
+  color:#fff;
+  padding:22px 60px;
+  font-size:1.45rem;
+  border-radius:60px;
+  font-weight:600;
+  box-shadow:0 20px 40px rgba(0,0,0,0.4);
+  border:none;
+  cursor:pointer;
+  transition:0.4s ease;
+}
+.cta-button:hover { transform:scale(1.1); }
+.cta a:hover { transform:scale(1.1); }
+
+.final { max-width:800px; margin:auto; text-align:center; font-size:1.3rem; color:#fff; opacity:0.9; }
+
+footer { text-align:center; padding:50px 20px; color:#aaa; }
+
+@media(max-width:768px){
+  .hero h1{ font-size:2.8rem; }
+  .hero p{ font-size:1.1rem; }
+  section{ padding:60px 24px; }
+  .gallery-item img { height:250px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="toggle" onclick="toggleTheme()">🌙 / ☀️</div>
+
+<div class="hero" id="hero">
+  <div class="hero-content">
+    <h1>Amô, me perdoa</h1>
+    <p>Amor, antes de qualquer palavra, eu preciso reconhecer o homem íntegro, verdadeiro e cuidadoso que você sempre foi comigo.</p>
+  </div>
+</div>
+
+<section>
+  <h2>Antes de tudo: você</h2>
+  <div class="divider"></div>
+  <p>Você sempre foi transparente, respeitoso e leal. Nunca me deu motivos para insegurança — e ainda assim foi você quem saiu machucado.</p>
+  <p>Meu erro pesa mais justamente porque partiu de alguém que recebeu de você confiança e amor verdadeiro.</p>
+</section>
+
+<section>
+  <h2>Onde eu falhei</h2>
+  <div class="divider"></div>
+  <p>Eu menti. <span class="emphasis">Três vezes.</span> Não por maldade, mas por medo de te deixar mal, imaturidade e não saber lidar com as coisas.
+  <p>Cada mentira abalou algo precioso: <span class="emphasis">a confiança que você depositou em mim.</span></p>
+</section>
+
+<section>
+  <h2>A verdade</h2>
+  <div class="divider"></div>
+  <p>Eu entendo você ter desconfiança em relação a mim. Quis ser transparente desde o começo em relação ao jayme e eu senti que você só ficava mais desconfiado... Após os meus erros, hoje eu entendo completamente o motivo de você estar assim... eu deveria ter agido de outra forma...</p>
+  <p>Eu menti ao apagar mensagens, não contar da presença dele ou que foi ele quem pagou o almoço... (não, ele NÃO é provedor). 
+<br>
+<br>
+
+<span class="emphasis">Você ficou desconfiado e eu falhei com a verdade.</span></p>
+</section>
+
+<section>
+  <h2>Meu pedido de desculpas</h2>
+  <div class="divider"></div>
+  <p>Amor, eu sinto muito e peço mil desculpas.
+<br>
+ Por quebrar sua confiança, por causar insegurança e por não honrar o amor que você me oferece.</p>
+  <p>Não escrevo isso esperando esquecer, mas para assumir, aprender e jamais repetir.
+<br>
+<br>
+<span class="emphasis">Eu aprendi com os meus erros
+<br>
+E esse é só o começo do que eu estou falando que vou fazer pra você</span>
+</p>
+</section>
+
+<section>
+  <h2>Nossas memórias</h2>
+  <div class="divider"></div>
+<p>Trago aqui algumas memórias e momentos importantes nossos e de motivos que vale a pena relembrar e reascender a chama do nosso relacionamento. </p>
+
+  <div class="gallery">
+    <div class="gallery-item"><img src="foto1.jpeg" alt="Polaroid"></div>
+    <div class="gallery-item"><img src="foto2.jpeg" alt="Espelho"></div>
+    <div class="gallery-item"><img src="foto3.jpeg" alt="Espelho"></div>
+    <div class="gallery-item"><img src="foto4.jpeg" alt="Espelho"></div>
+    <div class="gallery-item"><img src="foto5.jpeg" alt="Espelho"></div>
+    <div class="gallery-item"><img src="foto6.jpeg" alt="Espelho"></div>
+    <div class="gallery-item"><img src="foto7.jpeg" alt="Espelho"></div>
+    <div class="gallery-item"><img src="foto8.jpeg" alt="Espelho"></div>
+    <div class="gallery-item"><img src="hero.jpeg" alt="Espelho"></div>
+  </div>
+  <div class="caption">Cada lembrança aqui reforça o quanto você é importante pra mim. Desde o dia em que nos conhecemos, o dia em que sentamos na mesa de bar e nos fechamos, quanto os outros inúmeros dias em que estivemos juntos. Todos esses dias que eu passei e passo com você são dias especiais, que eu não trocaria por nada. E acredito que para você também foram momentos maravilhosos. Eu realmente amo muito você e quero reconstruir esse relacionamento.
+ <br>
+<br>
+<strong>CASO VOCÊ QUEIRA SEGUIR OS PRÓXIMOS PASSOS PARA RECONSTRUIR ESTE RELACIONAMENTO, APERTE O BOTÃO ABAIXO:</strong> </div>
+</section>
+
+<div class="cta">
+  <button onclick="redirectToQualidades()" class="cta-button">Amô, você me perdoa?</button>
+</div>
+
+<script>
+function redirectToQualidades() {
+  window.location.href = "qualidades.html"; // Nome da nova página
+}
+</script>
+
+<footer>Com verdade, responsabilidade e esperança.</footer>
+
+<script>
+/* SECTIONS SCROLL ANIMATION */
+const sections = document.querySelectorAll("section");
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    if(sec.getBoundingClientRect().top < window.innerHeight - 100){
+      sec.classList.add("show");
+    }
+  });
+
+  /* HERO PARALLAX */
+  const hero = document.getElementById("hero");
+  hero.style.backgroundPosition = `center ${window.scrollY*0.4}px`;
+
+  /* GALLERY SCROLL ANIMATION */
+  const galleryItems = document.querySelectorAll(".gallery-item");
+  galleryItems.forEach(item => {
+    const rect = item.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 80){
+      item.classList.add("show");
+    }
+  });
+});
+
+/* DARK/LIGHT THEME */
+function toggleTheme(){ document.body.classList.toggle("light"); }
+
+/* PARTICLES HERO */
+const hero = document.getElementById("hero");
+for(let i=0;i<40;i++){
+  const p = document.createElement("div");
+  p.classList.add("particle");
+  const size = Math.random()*4 + 2;
+  p.style.width = size + "px";
+  p.style.height = size + "px";
+  p.style.top = Math.random()*100 + "%";
+  p.style.left = Math.random()*100 + "%";
+  p.style.animationDuration = 5 + Math.random()*10 + "s";
+  p.style.background = `rgba(255,255,255,${0.1 + Math.random()*0.4})`;
+  hero.appendChild(p);
+}
+</script>
+
+</body>
+</html>
