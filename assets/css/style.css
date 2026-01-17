@@ -46,7 +46,13 @@ body{
 }
 
 
-.hero-content{z-index:2;color:#fff;max-width:900px;}
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 900px;
+  padding: 20px;
+}
+
 
 section{
   background:var(--card);
