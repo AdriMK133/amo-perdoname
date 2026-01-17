@@ -54,41 +54,37 @@ body {
   100% { background-position:0% 50%; }
 }
 .hero {
-  position: relative;
   height: 100vh;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  color: #fff;
   overflow: hidden;
+
+  /* imagem de fundo */
+  background-image: url("../images/hero.jpeg");
+  background-size: cover;
+  background-position: center;
 }
 
-/* Imagem de fundo */
-.hero::before {
-  content: "";
+/* overlay vermelho */
+.hero-overlay {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: url('assets/images/hero.jpeg') center/cover no-repeat;
-  opacity: 0.6; /* controla a visibilidade da imagem */
+  inset: 0;
+  background: rgba(176, 0, 32, 0.65);
   z-index: 1;
 }
 
-/* Overlay vermelho */
-.hero::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(176, 0, 32, 0.6); /* vermelho com transparência */
-  z-index: 2;
-}
-
-/* Conteúdo (texto) fica acima de tudo */
+/* texto */
 .hero-content {
   position: relative;
-  z-index: 3;
+  z-index: 2;
   max-width: 900px;
   padding: 20px;
 }
+
 
 
 .hero-content { max-width:900px; padding:20px; position: relative; z-index:2; }
