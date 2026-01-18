@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>amô me perdoa2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #0a0a0a;
+  --card: #ffffff;
+  --text: #2a2a2a;
+  --accent: #b00020;
+  --muted: #777;
+}
+body.light {
+  --bg:#f4f4f4; --card:#fff; --text:#1e1e1e; --accent:#8b0015; --muted:#666;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  transition:0.6s ease;
+  overflow-x:hidden;
+}
+
+/* TOGGLE DARK/LIGHT */
+.toggle{
+  position:fixed;top:25px;right:25px;z-index:1000;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(10px);
+  border-radius:30px;
+  padding:10px 16px;
+  color:#fff;cursor:pointer;font-size:0.9rem;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:linear-gradient(120deg,#ff6a6a,#b00020,#ff6a6a);
+  background-size:600% 600%;
+  animation:gradientFlow 20s ease infinite;
+}
+@keyframes gradientFlow{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:4rem;
+  margin-bottom:20px;
+}
+.hero p{
+  font-size:1.35rem;
+  line-height:1.9;
+  opacity:0.95;
+}
+
+/* SECTIONS */
+section{
+  background:var(--card);
+  margin:120px auto;
+  padding:80px 30px;
+  max-width:1100px;
+  border-radius:30px;
+  box-shadow:0 40px 90px rgba(0,0,0,0.15);
+  opacity:0;
+  transform:translateY(60px);
+  transition:1s ease;
+}
+section.show{opacity:1;transform:translateY(0);}
+section h2{font-family:'Playfair Display',serif;text-align:center;font-size:2.7rem;color:var(--accent);margin-bottom:25px;}
+.divider{width:120px;height:4px;background:var(--accent);margin:20px auto 40px;border-radius:2px;}
+section p{font-size:1.15rem;line-height:2;margin-bottom:22px;color:var(--text);}
+.emphasis{color:var(--accent);font-weight:600;}
+
+/* BUTTON CTA */
+.cta{text-align:center;margin:80px 20px;}
+.cta a{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--accent),#500010);
+  color:#fff; padding:22px 60px; font-size:1.45rem;
+  border-radius:60px; font-weight:600;
+  box-shadow:0 20px 40px rgba(0,0,0,0.4);
+  text-decoration:none; transition:0.4s ease;
+}
+.cta a:hover{transform:scale(1.1);}
+
+/* GALLERY / ICONS */
+.features{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+.feature-card{
+  background:var(--bg);
+  border-radius:20px;
+  padding:40px 20px;
+  text-align:center;
+  box-shadow:0 20px 50px rgba(0,0,0,0.25);
+  transition:transform 0.6s ease, box-shadow 0.6s ease, opacity 0.8s ease;
+  opacity:0;
+  transform:translateY(60px);
+}
+.feature-card.show{opacity:1;transform:translateY(0);}
+.feature-card:hover{transform:scale(1.05);box-shadow:0 35px 80px rgba(0,0,0,0.35);}
+.feature-card h3{font-family:'Playfair Display',serif;color:var(--accent);margin-bottom:15px;font-size:1.8rem;}
+.feature-card p{color:var(--text);font-size:1.1rem;line-height:1.8;}
+
+/* FOOTER */
+footer{text-align:center;padding:50px 20px;color:#aaa;}
+
+@media(max-width:768px){
+.hero h1{font-size:2.8rem;}
+.hero p{font-size:1.1rem;}
+section{padding:60px 24px;}
+}
+</style>
+</head>
+<body>
+
+<div class="toggle" onclick="toggleTheme()">🌙 / ☀️</div>
+
+<div class="hero">
+  <div class="hero-content">
+    <h1>Motivos de você continuar comigo</h1>
+    <p>Eu sei que errei e não vou fingir que isso não aconteceu.
+      Você tem todo o direito de ficar desconfiado, todos os meus erros pesam em mim, pois sei que eu errei com a pessoa que eu mais amo nesse mundo.
+<br>
+E não estou fazendo isso para apagar meus erros, mas mesmo errando, eu sei que ainda posso somar na sua vida</p>
+  </div>
+</div>
+
+<section>
+  <h2>Não sou uma namorada perfeita, mas serei responsável...</h2>
+  <div class="divider"></div>
+  <p> <ul>
+      <li> eu assumo tudo o que fiz, não vou ficar me justificando, a culpa é MINHA</li>
+      <li> eu sinto culpa por ter te machucado</li>
+      <li> eu sei que desculpas não apagam os meus erros e o que te causou</li>
+      <li> eu aceito o tempo que você precisar, respeito se você ainda tiver chateado</li>
+      <li> eu não quero te convencer, quero te respeitar</li>
+      <li> eu sei que confiança não se pede, se reconstrói</li>
+    </ul></p>
+</section>
+
+<section>
+  <h2>O que eu aprendi com meus erros</h2>
+  <div class="divider"></div>
+  <p><ul>
+      <li> Que evitar conflitos com mentiras só cria problemas maiores</li>
+      <li> Que transparência é uma forma de cuidado, não de risco</li>
+      <li> Que amar alguém exige maturidade emocional</li>
+      <li> Que minhas atitudes precisam sustentar minhas palavras</li>
+    </ul></p>
+</section>
+
+<section>
+  <h2>O que existe de verdadeiro em mim</h2>
+  <div class="divider"></div>
+  <p><ul>
+      <li> Meu sentimento por você nunca foi mentira, EU AMO VOCÊ</li>
+      <li> Eu me importo com o que você sente, mesmo quando dói ouvir</li>
+      <li> Eu sinto sua falta mesmo quando estamos perto, sei que você está distante</li>
+      <li> Meu coração escolheu você, mesmo falhando no caminho, mas eu nunca fui infiel com você ou teve alguém no meio do caminho... NUNCA</li>
+    </ul></p>
+</section>
+
+
+
+<section>
+  <h2>O que eu proponho daqui pra frente</h2>
+  <div class="divider"></div>
+  <p>
+ <ul>
+      <li> Verdade, mesmo quando for desconfortável</li>
+      <li> Conversas claras</li>
+      <li> Respeito ao seu tempo e aos seus limites</li>
+      <li> Mudança demonstrada em ações contínuas</li>
+      <li> Estarei sempre ao seu lado </li>
+      <li> Quero construir momentos felizes com você, leveza e cumplicidade, como éramos antes. Viajar, rir, crescer juntos e estarmos lado a lado sempre  </li>
+      <li> Te demonstrar mais o quanto eu te valorizo como meu namorado </li>
+    </ul></p>
+</section>
+
+<section>
+  <h2>Amor, se você decidir ficar...</h2>
+  <div class="divider"></div>
+  <p>
+E se você decidir tentar,
+      quero que seja sabendo que eu errei,
+      entendi onde errei
+      e estou comprometida em fazer diferente.</p>
+</section>
+
+
+
+
+<div class="cta">
+  <a href="index.html">Pronto para continuar? 
+<br>EM BREVE ❤️</a>
+</div>
+
+<footer>Com amor, carinho e sinceridade.
+<br>
+Sua A de Amor </footer>
+
+<script>
+/* SCROLL ANIMATION */
+const sections = document.querySelectorAll("section");
+window.addEventListener("scroll",()=>{
+  sections.forEach(sec=>{
+    if(sec.getBoundingClientRect().top<window.innerHeight-100){
+      sec.classList.add("show");
+    }
+  });
+});
+
+/* DARK/LIGHT THEME */
+function toggleTheme(){ document.body.classList.toggle("light"); }
+</script>
+
+</body>
+</html>
