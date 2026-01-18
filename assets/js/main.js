@@ -1,6 +1,6 @@
 /* REDIRECIONAR BOTÃO */
 function redirectToQualidades() {
-   window.location.href = "qualidades.html";
+   window.location.href = "qualidades1.html";
   }
 
 /* DARK/LIGHT THEME */
