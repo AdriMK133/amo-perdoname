@@ -1,5 +1,7 @@
 /* REDIRECIONAR BOTÃO */
 function redirectToQualidades() {
+    window.location.href = "qualidades1.html";
+}
 
 /* DARK/LIGHT THEME */
 function toggleTheme(){ 
