@@ -216,18 +216,20 @@ Sua A de Amor </footer>
 <script>
 /* SCROLL ANIMATION */
 const sections = document.querySelectorAll("section");
-window.addEventListener("scroll",()=>{
-  sections.forEach(sec=>{
-    if(sec.getBoundingClientRect().top<window.innerHeight-100){
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
       sec.classList.add("show");
     }
   });
 });
 
 /* DARK/LIGHT THEME */
-function toggleTheme(){ document.body.classList.toggle("light"); }
+function toggleTheme() {
+  document.body.classList.toggle("light");
+}
 
-// Redireciona imediatamente para outra página
+// Redireciona ao clicar no botão
 function redirectToValorizar() {
   window.location.href = "valorizar.html";
 }
@@ -235,6 +237,7 @@ function redirectToValorizar() {
 
 </body>
 </html>
+
 
 
 
