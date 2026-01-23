@@ -205,7 +205,7 @@ E não estou fazendo isso para apagar meus erros, mas mesmo errando, eu sei que 
 
 
 <div class="cta">
-  <a href="index.html">Pronto para continuar? 
+  <a href="#" onclick="redirectToValorizar()">Pronto para continuar? 
 <br>EM BREVE ❤️</a>
 </div>
 
@@ -228,11 +228,13 @@ window.addEventListener("scroll",()=>{
 function toggleTheme(){ document.body.classList.toggle("light"); }
 
 // Redireciona imediatamente para outra página
-window.location.href = "valorizar.html";
+function redirectToValorizar() {
+  window.location.href = "valorizar.html";
 </script>
 
 </body>
 </html>
+
 
 
 
