@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Desconfiança</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #0a0a0a;
+  --card: #ffffff;
+  --text: #2a2a2a;
+  --accent: #b00020;
+  --muted: #777;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  position: relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+  overflow:hidden;
+  background: linear-gradient(120deg, #ff6a6a, #b00020, #ff6a6a);
+  background-size:600% 600%;
+  animation: gradientFlow 20s ease infinite;
+}
+
+@keyframes gradientFlow {
+  0% { background-position:0% 50%; }
+  50% { background-position:100% 50%; }
+  100% { background-position:0% 50%; }
+}
+
+.hero-content {
+  max-width:900px;
+  padding:20px;
+  z-index:2;
+  position:relative;
+}
+
+.hero h1 {
+  font-family:'Playfair Display', serif;
+  font-size:3.8rem;
+  margin-bottom:20px;
+}
+
+.hero p {
+  font-size:1.35rem;
+  line-height:1.9;
+  opacity:0.95;
+}
+
+/* PARTICLES */
+.particle {
+  position:absolute;
+  border-radius:50%;
+  background:rgba(255,255,255,0.4);
+  pointer-events:none;
+  animation:float 10s infinite linear;
+}
+
+@keyframes float {
+  0% { transform:translateY(0); opacity:.3; }
+  50% { transform:translateY(-60px); opacity:.6; }
+  100% { transform:translateY(0); opacity:.3; }
+}
+
+/* SECTIONS */
+section {
+  background:var(--card);
+  margin:120px auto;
+  padding:80px 30px;
+  max-width:1000px;
+  border-radius:30px;
+  box-shadow:0 40px 90px rgba(0,0,0,0.15);
+  opacity:0;
+  transform:translateY(60px);
+  transition:1s ease;
+}
+
+section.show {
+  opacity:1;
+  transform:translateY(0);
+}
+
+section h2 {
+  font-family:'Playfair Display', serif;
+  text-align:center;
+  font-size:2.4rem;
+  color:var(--accent);
+  margin-bottom:25px;
+}
+
+.divider {
+  width:120px;
+  height:4px;
+  background:var(--accent);
+  margin:20px auto 40px;
+  border-radius:2px;
+}
+
+section p, li {
+  font-size:1.1rem;
+  line-height:2;
+  margin-bottom:18px;
+}
+
+ul {
+  padding-left:20px;
+}
+
+.highlight {
+  background:#ffecec;
+  padding:30px;
+  border-left:5px solid var(--accent);
+  border-radius:10px;
+  margin-top:40px;
+}
+
+/* CTA */
+.cta {
+  text-align:center;
+  margin:140px 20px;
+  color:#fff;
+}
+
+.cta-button {
+  display:inline-block;
+  background:linear-gradient(135deg,#b00020,#500010);
+  color:#fff;
+  padding:22px 60px;
+  font-size:1.4rem;
+  border-radius:60px;
+  font-weight:600;
+  box-shadow:0 20px 40px rgba(0,0,0,0.4);
+  border:none;
+  cursor:pointer;
+  transition:.4s ease;
+}
+
+.cta-button:hover {
+  transform:scale(1.1);
+}
+
+footer {
+  text-align:center;
+  padding:50px 20px;
+  color:#aaa;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero h1{ font-size:2.6rem; }
+  .hero p{ font-size:1.1rem; }
+  section{ padding:60px 24px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero" id="hero">
+  <div class="hero-content">
+    <h1>Desconfiança</h1>
+    <p>
+      Eu escrevo isso para você com responsabilidade e respeito.
+Não para apagar o que aconteceu, nem para pedir que você finja que não doeu, mas para reconhecer o que foi quebrado e assumir, a minha parte nisso.
+<br>
+<br>
+Eu quero que você saiba que a minha intenção aqui não é convencer, pressionar ou acelerar nada.
+É apenas tentar devolver um pouco da tranquilidade que eu tirei e mostrar que eu entendi o impacto das minhas atitudes.
+    </p>
+  </div>
+</div>
+
+<section>
+  <h2>Por que a Desconfiança Destrói Relações?</h2>
+  <div class="divider"></div>
+  <p>
+    Eu aprendi que a desconfiança não nasce do nada.
+Ela aparece quando o amor é ferido, quando algo quebra a segurança emocional e o coração passa a se proteger para não sofrer de novo.
+<br>
+<br>
+O problema é que, com o tempo, essa proteção cansa.
+O relacionamento fica pesado, o diálogo se enfraquece e o silêncio começa a machucar mais do que qualquer conversa difícil.
+Eu sei que fui parte disso.
+  </p>
+</section>
+
+<section>
+  <h2>Sinais</h2>
+  <div class="divider"></div>
+  <p>
+    Eu reconheço os sinais da desconfiança, porque eu vi isso surgir em você, e eu sei que não foi sem motivo.
+<br>
+<br>
+O medo constante de ser enganado.
+O ciúme que não vem da falta de amor, mas da insegurança.
+A necessidade de controle como tentativa de se sentir seguro.
+As discussões que aparecem quando a dor não consegue ser dita.
+A ansiedade quando algo foge do esperado.
+<br>
+<br>
+Eu quero que você saiba que eu entendo isso hoje.
+E entendo, principalmente, que desconfiança não é falta de amor.
+Muitas vezes, é medo. E esse medo não surgiu do nada.</p>
+</section>
+
+<section>
+  <h2>Entender a dor que eu te causei</h2>
+  <div class="divider"></div>
+  <p>
+    Antes de qualquer explicação, eu precisei aprender a olhar para dentro.
+A me perguntar se a dor que você sente vem apenas do que aconteceu entre nós ou se eu reacendi feridas que já existiam.
+<br>
+<br>
+Eu entendi que a reconstrução começa quando eu reconheço meus erros sem justificar, sem minimizar e sem transferir responsabilidade.
+Eu falhei, e isso teve consequências emocionais em você.
+  </p>
+  <p>
+    Curar o relacionamento começa por reconhecer suas próprias feridas emocionais.
+  </p>
+</section>
+
+<section>
+  <h2>Comunicação clara</h2>
+  <div class="divider"></div>
+  <p>
+   Eu aprendi que guardar sentimentos cria distância.
+E que acusar cria confronto.
+<br>
+<br>
+O que constrói é falar com clareza, respeito e verdade.
+É dizer o que eu sinto, assumir o que eu fiz e, principalmente, saber escutar você sem me defender o tempo todo, e não o que imagina
+<br>
+<br>
+Eu sei que a confiança só pode existir onde existe diálogo honesto.
+  </p>
+</section>
+
+<section>
+  <h2>Reconstrução da confiança</h2>
+  <div class="divider"></div>
+  <p>
+   Eu entendi que confiança não se pede.
+Ela se reconstrói.
+<br>
+<br>
+Com atitudes coerentes, consistentes e repetidas.
+Não com promessas, mas com comportamento.
+Com presença, transparência e paciência.
+<br>
+<br>
+Eu sei que cada pequena atitude minha, quando alinhada com o que eu digo, pode ajudar seu coração a se sentir um pouco mais seguro comigo — e sei que isso leva tempo.
+  </p>
+</section>
+
+<section>
+  <h2>Autoestima</h2>
+  <div class="divider"></div>
+  <p>
+    Eu também entendi que preciso fortalecer a minha própria postura emocional.
+Quanto mais segura eu sou internamente, menos eu ajo por medo ou impulsividade.
+<br>
+<br>
+Pessoas maduras emocionalmente não tentam controlar o outro, elas assumem responsabilidade pelas próprias escolhas.
+Hoje, autoestima pra mim é agir de forma alinhada com os valores que eu digo ter, independentemente do resultado.
+<br>
+<br>
+Uma verdade que eu aprendi nesse processo é que confiar no outro começa quando a gente sustenta as próprias atitudes com maturidade.
+<br>
+<br>
+Confiar no outro começa em confiar em si mesmo
+  </p>
+  <p>
+    Autoestima é saber que, independentemente do que aconteça, você ficará bem.
+  </p></section>
+
+<section>
+  <h2>Exercício Diário Para Reduzir a Desconfiança</h2>
+  <div class="divider"></div>
+  <p>Só 5 minutinhos por dia:</p>
+  <ul>
+    <li>Respire por 1 minuto</li>
+    <li>Identifique um pensamento de desconfiança</li>
+    <li>Pergunte: isso é fato ou medo?</li>
+    <li>Reescreva o pensamento de forma mais realista</li>
+  </ul>
+  <p>
+    A repetição desse exercício treina seu cérebro a reagir com equilíbrio emocional.</P> </section>
+
+<section>
+<h2>Compromisso diário</h2>
+<div class="divider"></div>
+
+<p>Eu tenho tentado, todos os dias, ser mais consciente das minhas reações.
+<br>
+<br>
+Parar antes de responder.
+Identificar quando um pensamento vem do medo.
+Separar fatos de suposições.
+Escolher agir de forma mais honesta e equilibrada.
+<br>
+<br>
+Isso não resolve tudo de uma vez, mas me ajuda a ser mais coerente com a pessoa que eu quero ser pra você.
+<br>
+<br>
+E espero que isso também lhe ajude a te acalmar
+  </p>
+</section>
+
+<section>
+<h2>Enfim...</h2>
+<div class="divider"></div>
+Eu sei que um relacionamento saudável não é perfeito.
+Mas ele é seguro.
+<br>
+<br>
+É um espaço onde existe diálogo, respeito e estabilidade emocional.
+Onde erros são reconhecidos e atitudes mudam de verdade.
+<br>
+<br>
+Eu sei que a confiança foi quebrada.
+E eu entendo que reconstruir leva tempo, consistência e paciência.
+<br>
+<br>
+O que eu posso te dizer, com sinceridade, é que a minha decisão é ficar, assumir a responsabilidade pelo que fiz e agir de forma diferente, não por promessas, mas por atitudes.
+
+O resto… eu respeito o tempo e o sentimento que existem em você.</p></section>
+
+<div class="cta">
+  <h2>É isso...</h2>
+  <p>
+    Eu realmente te amo muito e quero reconstruir.
+  </p>
+  <br>
+  <button class="cta-button">Com amor, Adri</button>
+</div>
+
+<footer>
+  © 2026 — Amor's inc
+</footer>
+
+<script>
+/* SCROLL ANIMATION */
+const sections = document.querySelectorAll("section");
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    if (sec.getBoundingClientRect().top < window.innerHeight - 120) {
+      sec.classList.add("show");
+    }
+  });
+});
+
+/* PARTICLES */
+const hero = document.getElementById("hero");
+for (let i = 0; i < 40; i++) {
+  const p = document.createElement("div");
+  p.classList.add("particle");
+  const size = Math.random() * 4 + 2;
+  p.style.width = size + "px";
+  p.style.height = size + "px";
+  p.style.top = Math.random() * 100 + "%";
+  p.style.left = Math.random() * 100 + "%";
+  p.style.animationDuration = 5 + Math.random() * 10 + "s";
+  hero.appendChild(p);
+}
+</script>
+
+</body>
+</html>

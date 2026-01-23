@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Você é incrível</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #0a0a0a;
+  --card: #ffffff;
+  --text: #2a2a2a;
+  --accent: #b00020;
+  --muted: #777;
+}
+
+body.light {
+  --bg: #f4f4f4;
+  --card: #ffffff;
+  --text: #1e1e1e;
+  --accent: #8b0015;
+  --muted: #666;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.6s ease, color 0.6s ease;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* TOGGLE */
+.toggle {
+  position: fixed; top:25px; right:25px; z-index:1000;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  border-radius:30px;
+  padding:10px 16px;
+  color:#fff; cursor:pointer; font-size:0.9rem;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  background: linear-gradient(120deg, #ff6a6a, #b00020, #ff6a6a);
+  background-size: 600% 600%;
+  animation: gradientFlow 20s ease infinite;
+}
+@keyframes gradientFlow {
+  0% { background-position:0% 50%; }
+  50% { background-position:100% 50%; }
+  100% { background-position:0% 50%; }
+}
+.hero::after {
+  content:"";
+  position:absolute; top:0; left:0; width:100%; height:100%;
+  background: url('hero.jpeg') center/cover no-repeat;
+  z-index:1;
+  opacity:0.35;
+}
+.hero-content { max-width:900px; padding:20px; position: relative; z-index:2; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size:4rem; margin-bottom:20px; }
+.hero p { font-size:1.35rem; line-height:1.9; opacity:0.95; }
+
+/* PARTICLES */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  pointer-events: none;
+  animation: float 10s infinite linear;
+  z-index:2;
+}
+@keyframes float {
+  0% { transform: translateY(0) translateX(0); opacity: 0.3; }
+  50% { transform: translateY(-60px) translateX(30px); opacity: 0.6; }
+  100% { transform: translateY(0) translateX(0); opacity: 0.3; }
+}
+
+/* SECTIONS */
+section {
+  background: var(--card);
+  margin:120px auto;
+  padding:80px 30px;
+  max-width:1100px;
+  border-radius:30px;
+  box-shadow:0 40px 90px rgba(0,0,0,0.15);
+  opacity:0;
+  transform:translateY(60px);
+  transition:1s ease;
+}
+section.show { opacity:1; transform:translateY(0); }
+section h2 { font-family:'Playfair Display', serif; text-align:center; font-size:2.7rem; color:var(--accent); margin-bottom:25px; }
+.divider { width:120px; height:4px; background:var(--accent); margin:20px auto 40px; border-radius:2px; }
+section p { font-size:1.15rem; line-height:2; margin-bottom:22px; color:var(--text); }
+.emphasis { color:var(--accent); font-weight:600; }
+
+/* BILHETES ANIMADOS */
+.bilhete-container { max-width:600px; margin:40px auto; text-align:center; }
+.bilhete { background: var(--accent); color:#fff; padding:20px 25px; border-radius:20px; margin:20px 0; opacity:0; transform: translateY(40px); transition:0.8s ease; font-size:1.2rem; font-weight:500; }
+
+/* BUTTON CTA */
+.cta { text-align:center; margin:80px 20px; }
+.cta-button {
+  display:inline-block;
+  background:linear-gradient(135deg,#b00020,#500010);
+  color:#fff;
+  padding:22px 60px;
+  font-size:1.45rem;
+  border-radius:60px;
+  font-weight:600;
+  box-shadow:0 20px 40px rgba(0,0,0,0.4);
+  border:none;
+  cursor:pointer;
+  transition:0.4s ease;
+}
+.cta-button:hover { transform:scale(1.1); }
+
+footer { text-align:center; padding:50px 20px; color:#aaa; }
+
+@media(max-width:768px){
+  .hero h1{ font-size:2.8rem; }
+  .hero p{ font-size:1.1rem; }
+  section{ padding:60px 24px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="toggle" onclick="toggleTheme()">🌙 / ☀️</div>
+
+<div class="hero" id="hero">
+  <div class="hero-content">
+    <h1>Você é meu tudo</h1>
+    <p>Hoje eu quero mostrar a você tudo que você faz por mim, e o quão grata eu sou por ter você.
+<br> Obrigada por ser incrível em todos os sentidos.</p>
+  </div>
+</div>
+
+<section>
+  <h2>Seu valor</h2>
+  <div class="divider"></div>
+  <p>
+Você é um homem excepcional!!!
+<br> Cada gesto seu demonstra respeito, carinho e atenção.
+<br> O jeito como se importa comigo, com minha felicidade e com meu bem-estar, me faz sentir amada de um jeito único.
+<br>
+Seu valor vai muito além das palavras, ele está em cada atitude, em cada sorriso, em cada momento que me dedica. 
+<br>
+<br>
+Você faz eu me sentir especial!
+<br>
+<span class="emphasis">Sou grata por cada momento que passamos juntos e por todas as vezes que você me apoiou sem hesitar.</span>
+</p>
+</section>
+
+<section>
+  <h2>Seu cuidado</h2>
+  <div class="divider"></div>
+  <p>Você tem um dom raro: perceber meus sentimentos antes mesmo de eu falar. 
+<br>Seu cuidado não é apenas atenção aos detalhes, mas uma compreensão do que me faz bem.
+<br>
+<br>
+Seu coração é generoso, e a maneira como você se importa comigo me inspira a ser melhor a cada dia mais que estou com você.
+<br>
+Seja um abraço no momento certo, uma palavra de incentivo ou um simples gesto que só você sabe fazer, eu sinto todo o amor que existe em você. 
+<br>
+<span class="emphasis">Estar ao seu lado me faz sentir protegida, acolhida e infinitamente especial.</span></p>
+  <p></p>
+</section>
+
+<section>
+  <h2>Seu apoio</h2>
+  <div class="divider"></div>
+  <p>Obrigado por sempre acreditar em mim. Sua confiança me dá coragem para seguir em frente.
+<br>
+Em todos os desafios da vida, você está comigo, oferecendo força, confiança e segurança.
+</p>
+  <p>Seu amor é um abrigo, e saber que posso contar com você torna minha vida mais leve e feliz.
+<br>
+Seu apoio me dá coragem para enfrentar os meus medos e superar obstáculos. 
+<br>Saber que posso contar com você me dá uma paz que palavras não conseguem descrever. 
+<br>
+<span class="emphasis">Você é meu porto seguro, meu aliado e meu melhor amigo.</span></p>
+</section>
+
+<section>
+  <h2>Seu jeito único</h2>
+  <div class="divider"></div>
+  <p> Tudo em você é especial.
+<br> O seu jeito de falar, de sorrir, o seu senso de humor de olhar para mim com atenção e ternura.
+<br>
+Você é único, e é justamente isso que me encanta todos os dias. 
+<br>
+Cada detalhe do seu ser me faz te admirar mais, me faz te querer por perto sempre, e me faz sentir a sorte enorme que é ter você na minha vida. 
+<br>
+Você torna o meu mundo mais bonito
+<br>
+<span class="emphasis">Sou grata por ter você na minha vida!!!!!!!</span></p>
+</section>
+
+<section>
+  <h2>Como você me inspira</h2>
+  <div class="divider"></div>
+  <p>Seu esforço diário, sua paciência e sua determinação me motivam a crescer e me tornar uma pessoa melhor.</p>
+<br>
+  <p>
+Você inspira o melhor que existe em mim.
+<br> Seu esforço, sua determinação e a forma como encara os desafios com coragem me motivam a crescer, evoluir e me tornar alguém mais forte e mais gentil.
+<br>
+Você não apenas sonha, você age. 
+<br>E ver sua dedicação, seu coração generoso e sua maneira de cuidar de mim me enche de admiração.
+<br>
+<span class="emphasis"> Você é minha inspiração constante, minha referência de amor, força e beleza. </span>
+</p>
+</section>
+
+<section>
+  <h2>Bilhetes de amor</h2>
+  <div class="divider"></div>
+  <div class="bilhete-container" id="bilhetes"></div>
+  <div class="cta">
+    <button onclick="mostrarBilheteFinal()" class="cta-button">Clique para ver os bilhetes de amor</button>
+  </div>
+</section>
+
+<section>
+  <h2>Surpresas</h2>
+  <div class="divider"></div>
+  <div class="bilhete-container" id="bilhetes2"></div>
+  <div class="cta">
+    <button onclick="mostrarSurpresa()" class="cta-button">Clique para ver as surpresas</button>
+  </div>
+</section>
+
+<div class="cta">
+  <button onclick="redirecionar()" class="cta-button">Vamos seguir?</button>
+</div>
+
+<footer>Com todo meu amor e gratidão.</footer>
+
+<script>
+/* DARK/LIGHT THEME */
+function toggleTheme() {
+  document.body.classList.toggle("light");
+}
+
+/* SECTIONS ANIMATION */
+const sections = document.querySelectorAll("section");
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    if(sec.getBoundingClientRect().top < window.innerHeight - 100){
+      sec.classList.add("show");
+    }
+  });
+});
+
+/* PARTICLES HERO */
+const hero = document.getElementById("hero");
+for(let i=0;i<40;i++){
+  const p = document.createElement("div");
+  p.classList.add("particle");
+  const size = Math.random()*4 + 2;
+  p.style.width = size + "px";
+  p.style.height = size + "px";
+  p.style.top = Math.random()*100 + "%";
+  p.style.left = Math.random()*100 + "%";
+  p.style.animationDuration = 5 + Math.random()*10 + "s";
+  p.style.background = `rgba(255,255,255,${0.1 + Math.random()*0.4})`;
+  hero.appendChild(p);
+}
+
+/* BILHETES ANIMADOS */
+const bilhetes = [
+  "Você me inspira a ser melhor todos os dias.",
+  "Obrigado por cada abraço e cada sorriso que você me dá.",
+  "Seu carinho e atenção fazem meu mundo mais leve.",
+  "Amo como você me faz sentir amada e segura.",
+  "Cada momento com você é único e especial.",
+  "Você é minha alegria constante e meu apoio fiel.",
+  "Meu coração é seu, hoje e sempre.",
+  "Amo tudo que você é e tudo que faz por mim.",
+  "Sua presença ilumina meus dias.",
+  "Sou grata por ter você ao meu lado em todos os momentos."
+];
+
+const container = document.getElementById("bilhetes");
+let idx = 0;
+
+function mostrarBilhete() {
+  if(idx < bilhetes.length){
+    const div = document.createElement("div");
+    div.className = "bilhete";
+    div.textContent = bilhetes[idx];
+    container.appendChild(div);
+    setTimeout(() => {
+      div.style.opacity = 1;
+      div.style.transform = "translateY(0)";
+    }, 50);
+    idx++;
+  }
+}
+
+function mostrarBilheteFinal() {
+  for(let i=0;i<bilhetes.length;i++){
+    setTimeout(mostrarBilhete, i*800);
+  }
+}
+
+/* SURPRESAS ANIMADAS */
+const surpresas = [
+  "Vale C* (só com lubrificante)",
+  "Garrafinha de água",
+  "Porta-retrato",
+  "Bilhetinhos",
+  "Caneca",
+  "To pobre amor, se não eu te dava mais coisas :("
+];
+
+const container2 = document.getElementById("bilhetes2");
+
+function mostrarSurpresa() {
+  for(let i = 0; i < surpresas.length; i++){
+    setTimeout(() => {
+      const div = document.createElement("div");
+      div.className = "bilhete";
+      div.textContent = surpresas[i];
+      container2.appendChild(div);
+      setTimeout(() => {
+        div.style.opacity = 1;
+        div.style.transform = "translateY(0)";
+      }, 50);
+    }, i*800);
+  }
+}
+
+/* BOTÃO REDIRECIONAR */
+function redirecionar() {
+  window.location.href = "surpresas.html"; // Alterar para a página desejada
+}
+</script>
+
+</body>
+</html>
