@@ -349,7 +349,7 @@ O resto… eu respeito o tempo e o sentimento que existem em você.</p></section
     Eu realmente te amo muito e quero reconstruir.
   </p>
   <br>
-  <button class="cta-button">Com amor, Adri</button>
+ <button class="cta-button" onclick="redirectToIndex()">Com amor, Adri</button>
 </div>
 
 <footer>
@@ -380,7 +380,14 @@ for (let i = 0; i < 40; i++) {
   p.style.animationDuration = 5 + Math.random() * 10 + "s";
   hero.appendChild(p);
 }
+
+// Redireciona ao clicar no botão
+function redirectToIndex() {
+  window.location.href = "index.html";
+}
+  
 </script>
 
 </body>
 </html>
+
